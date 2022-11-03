@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const db = require('./db')
 const genresRoutes = require('./routes/genres')
 const regionsRoutes = require('./routes/regions')
@@ -11,6 +12,7 @@ const app = express()
 
 // Middleware
 app.use(express.json())
+app.use(cors())
 
 // Routes
 app.use('/api/genres', genresRoutes)
