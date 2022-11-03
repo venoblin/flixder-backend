@@ -2,7 +2,7 @@
 
 ## Jonathan Villagomez
 
-[LinkedIn](https://www.linkedin.com/in/jonathan-hernandez-361565240/) |
+[LinkedIn](https://www.linkedin.com/in/jonathanvillagomezhernandez/) |
 [GitHub](https://github.com/VillagomezHJonathan) |
 [Website](https://www.jonweb.dev/)
 
@@ -53,6 +53,6 @@ https://localhost/api
 
 ## **_Credits_**
 
-#### Movie Info: [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
+### Movie Info: [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
 
-#### Images: [Unsplash](https://unsplash.com/)
+### Images: [Unsplash](https://unsplash.com/)
