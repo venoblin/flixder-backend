@@ -26,7 +26,7 @@
 #### Base URL
 
 ```
-https://localhost/api
+https://flixder-backend.herokuapp.com/api
 ```
 
 | Endpoint         | HTTP Verb | Description                  |
