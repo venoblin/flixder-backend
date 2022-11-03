@@ -8,22 +8,22 @@
 
 ---
 
-## **_Description_**
+### **_Description_**
 
-### The back-end of my Flixder application. Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. Built with Node.js and MongoDB, the backend has various endpoints like profiles, movies, genres etc.
+#### The back-end of my Flixder application. Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. Built with Node.js and MongoDB, the backend has various endpoints like profiles, movies, genres etc.
 
 ---
 
-## **_Technologies Used_**
+### **_Technologies Used_**
 
 - Node.js
 - MongoDB
 
 ---
 
-## **_Endpoints_**
+### **_Endpoints_**
 
-### Base URL
+#### Base URL
 
 ```
 https://localhost/api
@@ -51,8 +51,8 @@ https://localhost/api
 
 ---
 
-## **_Credits_**
+### **_Credits_**
 
-### Movie Info: [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
+#### Movie Info: [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
 
-### Images: [Unsplash](https://unsplash.com/)
+#### Images: [Unsplash](https://unsplash.com/)
