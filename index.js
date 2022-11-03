@@ -20,6 +20,10 @@ app.use('/api/movies', moviesRoutes)
 app.use('/api/images', imagesRoutes)
 app.use('/api/providers', providersRoutes)
 
+app.get('*', (req, res) => {
+  res.status(404).json({ error: '404 not found' })
+})
+
 app.listen(PORT, () => {
   console.log(`Started server on port ${PORT}`)
 })
