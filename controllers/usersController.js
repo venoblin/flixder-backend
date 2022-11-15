@@ -1,22 +1,11 @@
 const { User } = require('../models')
+const bcrypt = require('bcrypt')
 
 const getUser = async (req, res) => {
   try {
-    const { username } = req.params
+    const { email } = req.params
 
-    const user = await User.find({ username: username }).populate('profiles')
-
-    return res.status(201).json({
-      user
-    })
-  } catch (err) {
-    return res.status(500).json({ error: err.message })
-  }
-}
-
-const createUser = async (req, res) => {
-  try {
-    const user = await User.create(req.body)
+    const user = await User.find({ email: email }).populate('profiles')
 
     return res.status(201).json({
       user
@@ -38,8 +27,44 @@ const deleteUser = async (req, res) => {
   }
 }
 
+const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body
+
+    const user = await User.findOne({ email: email })
+    const validPassword = await bcrypt.compare(password, user.password)
+
+    if (validPassword) {
+      return res.status(201).json({ user })
+    }
+
+    throw 'Invalid email or password'
+  } catch (err) {
+    return res.status(500).json({ error: err })
+  }
+}
+
+const registerUser = async (req, res) => {
+  try {
+    const { email, password } = req.body
+
+    const hashed = await bcrypt.hash(password, 12)
+    const user = await User.create({
+      email: email,
+      password: hashed
+    })
+
+    return res.status(201).json({
+      user
+    })
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
+
 module.exports = {
   getUser,
-  createUser,
-  deleteUser
+  registerUser,
+  deleteUser,
+  loginUser
 }
