@@ -1,6 +1,18 @@
 const { User } = require('../models')
 const middleware = require('../middleware')
 
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await Users.find()
+
+    return res.status(201).json({
+      users
+    })
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
+
 const getUser = async (req, res) => {
   try {
     const { email } = req.params
@@ -75,5 +87,6 @@ module.exports = {
   getUser,
   registerUser,
   deleteUser,
-  loginUser
+  loginUser,
+  getAllUsers
 }
