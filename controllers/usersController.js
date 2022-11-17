@@ -42,12 +42,12 @@ const loginUser = async (req, res) => {
         id: user._id,
         email: user.email
       }
-      const token = middleware.createToken(payload)
 
+      const token = middleware.createToken(payload)
       return res.status(201).json({ user: payload, token })
     }
 
-    return res.status(500).json({ error: 'Unauthorized' })
+    res.status(401).json({ error: 'Unauthorized' })
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
