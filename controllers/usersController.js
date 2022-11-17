@@ -44,9 +44,8 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body
 
     const user = await User.findOne({ email: email })
-    const validPassword = middleware.comparePassword(password, user.password)
 
-    if (user && validPassword) {
+    if (user && middleware.comparePassword(password, user.password)) {
       const payload = {
         id: user._id,
         email: user.email
