@@ -3,24 +3,9 @@ const router = Router()
 const controller = require('../controllers/usersController')
 const middleware = require('../middleware')
 
-router.delete(
-  '/:id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.deleteUser
-)
+router.delete('/:id', controller.deleteUser)
 
-router.post(
-  '/register',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.registerUser
-)
-router.post(
-  '/login',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.loginUser
-)
+router.post('/register', controller.registerUser)
+router.post('/login', controller.loginUser)
 
 module.exports = router
