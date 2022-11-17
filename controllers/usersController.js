@@ -3,7 +3,7 @@ const middleware = require('../middleware')
 
 const getAllUsers = async (req, res) => {
   try {
-    const users = await Users.find()
+    const users = await User.find()
 
     return res.status(201).json({
       users

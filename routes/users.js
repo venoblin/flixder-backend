@@ -1,7 +1,6 @@
 const { Router } = require('express')
 const router = Router()
 const controller = require('../controllers/usersController')
-const middleware = require('../middleware')
 
 router.get('/', controller.getAllUsers)
 
