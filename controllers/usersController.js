@@ -52,7 +52,7 @@ const loginUser = async (req, res) => {
         email: user.email
       }
 
-      const token = middleware.createToken(payload)
+      const token = await middleware.createToken(payload)
       return res.status(201).json({ user: payload, token })
     }
 
@@ -66,16 +66,21 @@ const registerUser = async (req, res) => {
   try {
     const { email, password } = req.body
 
-    const hashed = middleware.hashPassword(password)
-    res.send(hashed)
-    // const user = await User.create({
-    //   email: email,
-    //   password: hashed
-    // })
+    const emailPresent = await User.findOne({ email: email })
 
-    // return res.status(201).json({
-    //   user
-    // })
+    if (!emailPresent) {
+      const hashed = await middleware.hashPassword(password)
+      const user = await User.create({
+        email: email,
+        password: hashed
+      })
+
+      return res.status(201).json({
+        user
+      })
+    }
+
+    res.status(401).json({ error: 'Unauthorized' })
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
