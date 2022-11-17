@@ -85,10 +85,16 @@ const registerUser = async (req, res) => {
   }
 }
 
+const checkSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
 module.exports = {
   getUser,
   registerUser,
   deleteUser,
   loginUser,
-  getAllUsers
+  getAllUsers,
+  checkSession
 }
