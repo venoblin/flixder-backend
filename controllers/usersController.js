@@ -32,7 +32,10 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body
 
     const user = await User.findOne({ email: email })
-    const validPassword = middleware.comparePassword(password, user.password)
+    const validPassword = await middleware.comparePassword(
+      password,
+      user.password
+    )
 
     if (user && validPassword) {
       const payload = {
@@ -46,7 +49,7 @@ const loginUser = async (req, res) => {
 
     res.status(401).json({ error: 'Unauthorized' })
   } catch (err) {
-    return res.status(500).json({ error: err })
+    return res.status(500).json({ error: err.message })
   }
 }
 
@@ -54,7 +57,7 @@ const registerUser = async (req, res) => {
   try {
     const { email, password } = req.body
 
-    const hashed = middleware.hashPassword(password)
+    const hashed = await middleware.hashPassword(password)
     const user = await User.create({
       email: email,
       password: hashed
