@@ -1,17 +1,17 @@
+require('dotenv').config()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-require('dotenv').config()
 
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const APP_SECRET = process.env.APP_SECRET
 
 const hashPassword = async (password) => {
-  const hash = await bcrypt(password, SALT_ROUNDS)
+  const hash = await bcrypt.hash(password, SALT_ROUNDS)
   return hash
 }
 
 const comparePassword = async (password, storedPassword) => {
-  const match = await bcrypt(password, storedPassword)
+  const match = await bcrypt.compare(password, storedPassword)
   return match
 }
 
