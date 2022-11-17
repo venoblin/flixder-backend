@@ -32,10 +32,7 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body
 
     const user = await User.findOne({ email: email })
-    const validPassword = await middleware.comparePassword(
-      password,
-      user.password
-    )
+    const validPassword = middleware.comparePassword(password, user.password)
 
     if (user && validPassword) {
       const payload = {
@@ -57,7 +54,7 @@ const registerUser = async (req, res) => {
   try {
     const { email, password } = req.body
 
-    const hashed = await middleware.hashPassword(password)
+    const hashed = middleware.hashPassword(password)
     const user = await User.create({
       email: email,
       password: hashed
