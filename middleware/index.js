@@ -5,13 +5,13 @@ const jwt = require('jsonwebtoken')
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const APP_SECRET = process.env.APP_SECRET
 
-const hashPassword = async (password) => {
-  const hash = await bcrypt.hash(password, SALT_ROUNDS)
+const hashPassword = (password) => {
+  const hash = bcrypt.hash(password, SALT_ROUNDS)
   return hash
 }
 
-const comparePassword = async (password, storedPassword) => {
-  const match = await bcrypt.compare(password, storedPassword)
+const comparePassword = (password, storedPassword) => {
+  const match = bcrypt.compare(password, storedPassword)
   return match
 }
 
@@ -25,7 +25,7 @@ const verifyToken = (req, res, next) => {
   try {
     const payload = jwt.verify(token, APP_SECRET)
     if (payload) {
-      res.locals = payload
+      res.locals.payload = payload
       return next()
     }
     res.status(401).json({ status: 'Error', msg: 'Unauthorized' })
