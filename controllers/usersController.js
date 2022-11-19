@@ -13,11 +13,27 @@ const getAllUsers = async (req, res) => {
   }
 }
 
+const getUser = async (req, res) => {
+  try {
+    const { email } = req.params
+
+    const user = await User.find({ email: email })
+
+    return res.status(201).json({
+      _id: user._id,
+      email: user.email,
+      password: user.password
+    })
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
+
 const getUserById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const user = await User.findById(id)
+    const user = await User.findById(id).populate('profiles')
 
     return res.status(201).json({
       _id: user._id,
@@ -77,7 +93,7 @@ const registerUser = async (req, res) => {
       })
 
       return res.status(201).json({
-        email: user.email
+        user
       })
     }
 
@@ -94,6 +110,7 @@ const checkSession = async (req, res) => {
 
 module.exports = {
   getUserById,
+  getUser,
   registerUser,
   deleteUser,
   loginUser,
