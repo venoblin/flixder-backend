@@ -1,15 +1,41 @@
 const { Router } = require('express')
 const router = Router()
 const controller = require('../controllers/profilesController')
+const middleware = require('../middleware')
 
-router.get('/', controller.getAllProfiles)
+router.get(
+  '/',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.getAllProfiles
+)
 
-router.post('/', controller.createProfile)
+router.post(
+  '/',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.createProfile
+)
 
-router.get('/:id', controller.getProfileById)
+router.get(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.getProfileById
+)
 
-router.delete('/:id', controller.deleteProfile)
+router.delete(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.deleteProfile
+)
 
-router.put('/:id', controller.updateProfile)
+router.put(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.updateProfile
+)
 
 module.exports = router

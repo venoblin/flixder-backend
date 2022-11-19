@@ -1,5 +1,4 @@
 const { User } = require('../models')
-const middleware = require('../middleware')
 
 const getAllUsers = async (req, res) => {
   try {
@@ -13,14 +12,16 @@ const getAllUsers = async (req, res) => {
   }
 }
 
-const getUser = async (req, res) => {
+const getUserById = async (req, res) => {
   try {
-    const { email } = req.params
+    const { id } = req.params
 
-    const user = await User.find({ email: email }).populate('profiles')
+    const user = await User.findById(id)
 
     return res.status(201).json({
-      user
+      _id: user._id,
+      email: user.email,
+      profiles: user.profiles
     })
   } catch (err) {
     return res.status(500).json({ error: err.message })
@@ -39,62 +40,8 @@ const deleteUser = async (req, res) => {
   }
 }
 
-const loginUser = async (req, res) => {
-  try {
-    const { email, password } = req.body
-
-    const user = await User.findOne({ email: email })
-
-    if (user && middleware.comparePassword(password, user.password)) {
-      const payload = {
-        id: user._id,
-        email: user.email
-      }
-
-      const token = await middleware.createToken(payload)
-      return res.status(201).json({ user: payload, token })
-    }
-
-    res.status(401).json({ error: 'Unauthorized' })
-  } catch (err) {
-    return res.status(500).json({ error: err.message })
-  }
-}
-
-const registerUser = async (req, res) => {
-  try {
-    const { email, password } = req.body
-
-    const emailPresent = await User.findOne({ email: email })
-
-    if (!emailPresent) {
-      const hashed = await middleware.hashPassword(password)
-      const user = await User.create({
-        email: email,
-        password: hashed
-      })
-
-      return res.status(201).json({
-        user
-      })
-    }
-
-    res.status(401).json({ error: 'Unauthorized' })
-  } catch (err) {
-    return res.status(500).json({ error: err.message })
-  }
-}
-
-const checkSession = async (req, res) => {
-  const { payload } = res.locals
-  res.send(payload)
-}
-
 module.exports = {
-  getUser,
-  registerUser,
+  getUserById,
   deleteUser,
-  loginUser,
-  getAllUsers,
-  checkSession
+  getAllUsers
 }
