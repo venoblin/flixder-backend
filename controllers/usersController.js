@@ -13,27 +13,11 @@ const getAllUsers = async (req, res) => {
   }
 }
 
-const getUser = async (req, res) => {
-  try {
-    const { email } = req.params
-
-    const user = await User.find({ email: email })
-
-    return res.status(201).json({
-      _id: user._id,
-      email: user.email,
-      password: user.password
-    })
-  } catch (err) {
-    return res.status(500).json({ error: err.message })
-  }
-}
-
 const getUserById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const user = await User.findById(id).populate('profiles')
+    const user = await User.findById(id)
 
     return res.status(201).json({
       _id: user._id,
@@ -66,7 +50,8 @@ const loginUser = async (req, res) => {
     if (user && middleware.comparePassword(password, user.password)) {
       const payload = {
         id: user._id,
-        email: user.email
+        email: user.email,
+        profiles: user.profiles
       }
 
       const token = await middleware.createToken(payload)
@@ -110,7 +95,6 @@ const checkSession = async (req, res) => {
 
 module.exports = {
   getUserById,
-  getUser,
   registerUser,
   deleteUser,
   loginUser,
