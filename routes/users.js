@@ -24,14 +24,18 @@ router.delete(
   controller.deleteUser
 )
 
-router.post('/register', controller.registerUser)
-router.post('/login', controller.loginUser)
-
 router.get(
-  '/session',
+  '/:id',
   middleware.stripToken,
   middleware.verifyToken,
-  controller.checkSession
+  controller.getUserById
+)
+
+router.delete(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.deleteUser
 )
 
 module.exports = router
