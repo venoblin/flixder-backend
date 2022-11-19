@@ -24,4 +24,18 @@ router.delete(
   controller.deleteUser
 )
 
+router.get(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.getUserById
+)
+
+router.delete(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.deleteUser
+)
+
 module.exports = router
