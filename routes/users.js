@@ -3,9 +3,26 @@ const router = Router()
 const controller = require('../controllers/usersController')
 const middleware = require('../middleware')
 
-router.get('/', controller.getAllUsers)
+router.get(
+  '/',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.getAllUsers
+)
 
-router.delete('/:id', controller.deleteUser)
+router.get(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.getUserById
+)
+
+router.delete(
+  '/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.deleteUser
+)
 
 router.post('/register', controller.registerUser)
 router.post('/login', controller.loginUser)

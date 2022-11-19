@@ -30,7 +30,7 @@ const verifyToken = (req, res, next) => {
     }
     res.status(401).json({ status: 'Error', msg: 'Unauthorized' })
   } catch (err) {
-    res.status(401).json({ status: 'Error', msg: "Can't verify token" })
+    res.status(401).json({ status: 'Error', msg: 'Unauthorized' })
   }
 }
 
@@ -42,7 +42,7 @@ const stripToken = (req, res, next) => {
       return next()
     }
   } catch (err) {
-    res.status(401).json({ status: 'Error', msg: "Can't strip token" })
+    res.status(401).json({ status: 'Error', msg: 'Unauthorized' })
   }
 }
 
