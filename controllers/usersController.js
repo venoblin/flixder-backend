@@ -40,8 +40,26 @@ const deleteUser = async (req, res) => {
   }
 }
 
+const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params
+    const updatedUser = await User.findOneAndUpdate({ _id: id }, req.body, {
+      new: true
+    })
+
+    return res.status(201).json({
+      _id: updatedUser._id,
+      email: updatedUser.email,
+      profiles: updatedUser.profiles
+    })
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
+
 module.exports = {
   getUserById,
   deleteUser,
-  getAllUsers
+  getAllUsers,
+  updateUser
 }

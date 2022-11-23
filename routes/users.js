@@ -24,11 +24,11 @@ router.delete(
   controller.deleteUser
 )
 
-router.get(
+router.put(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
-  controller.getUserById
+  controller.updateUser
 )
 
 router.delete(
