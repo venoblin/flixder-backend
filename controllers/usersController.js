@@ -16,7 +16,16 @@ const getUserById = async (req, res) => {
   try {
     const { id } = req.params
 
-    const user = await User.findById(id)
+    const user = await User.findById(id).populate({
+      path: 'profiles',
+      populate: [
+        { path: 'profile_pic', model: 'Image' },
+        { path: 'region', model: 'Region' },
+        { path: 'providers', model: 'Provider' },
+        { path: 'fav_genres', model: 'Genre' },
+        { path: 'fav_movies', model: 'Movie' }
+      ]
+    })
 
     return res.status(201).json({
       _id: user._id,
