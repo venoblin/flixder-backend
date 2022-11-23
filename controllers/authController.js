@@ -10,8 +10,7 @@ const loginUser = async (req, res) => {
     if (user && middleware.comparePassword(password, user.password)) {
       const payload = {
         id: user._id,
-        email: user.email,
-        profiles: user.profiles
+        email: user.email
       }
 
       const token = await middleware.createToken(payload)
