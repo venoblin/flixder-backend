@@ -14,6 +14,7 @@ app.use(cors())
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
+// 404 route
 app.get('*', (req, res) => {
   res.status(404).json({ error: '404 not found' })
 })
