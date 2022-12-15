@@ -27,12 +27,6 @@
 
 ### **_Endpoints_**
 
-#### Base URL
-
-```
-https://flixder-backend.herokuapp.com/api
-```
-
 | Endpoint         | HTTP Verb | Description                  |
 | ---------------- | --------- | ---------------------------- |
 | /movies          | GET       | Gets all movies              |
