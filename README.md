@@ -8,6 +8,10 @@
 
 ---
 
+### [Frontend](https://github.com/VillagomezHJonathan/flixder-frontend)
+
+---
+
 ### **_Description_**
 
 #### The back-end of my Flixder application. Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. Built with Node.js and MongoDB, the backend has various endpoints like profiles, movies, genres etc.
