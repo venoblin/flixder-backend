@@ -1,32 +1,70 @@
-# Flixder Back-End
-
-## Jonathan Villagomez
+<a name="readme-top"></a>
 
 [LinkedIn](https://www.linkedin.com/in/jonathanvillagomezhernandez/) |
-[GitHub](https://github.com/VillagomezHJonathan) |
 [Website](https://www.jonweb.dev/)
 
----
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-### [Frontend](https://github.com/VillagomezHJonathan/flixder-frontend)
+  <h1 align="center">Flixder</h3>
 
----
+  <p align="center">
+    Get matched with your next favorite movie!
+    <br />
+    <a href="https://flixder.netlify.app/"><strong>View Demo</strong></a> | 
+    <a href="https://github.com/venoblin/flixder-frontend"><strong>Front-End</strong></a>
+    <br />
+  </p>
+</div>
 
-### **_Description_**
 
-#### The back-end of my Flixder application. Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. Built with Node.js and MongoDB, the backend has various endpoints like profiles, movies, genres etc.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="endpoints">Endpoints</a></li>
+  </ol>
+</details>
 
----
 
-### **_Technologies Used_**
 
-- Node.js
-- MongoDB
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
----
+<p align="center">
+  <img src="project-info/screenshot01.png" width="650" />
+</p>
 
-### **_Endpoints_**
+<p align="center">
+  <img src="project-info/screenshot02.png" width="650" />
+</p>
 
+Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. A fun way to find new movies to watch!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+* React
+* SASS
+* Node.js
+* Express
+* MongoDB
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Endpoints
 | Endpoint         | HTTP Verb | Description                  |
 | ---------------- | --------- | ---------------------------- |
 | /movies          | GET       | Gets all movies              |
@@ -47,10 +85,4 @@
 | /profiles/:id    | PUT       | Updates a profile            |
 | /profiles/:id    | DELETE    | Deletes a profile            |
 
----
-
-### **_Credits_**
-
-#### Movie Info: [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
-
-#### Images: [Unsplash](https://unsplash.com/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
