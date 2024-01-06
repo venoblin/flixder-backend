@@ -29,7 +29,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="endpoints">Endpoints</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
   </ol>
 </details>
 
@@ -64,7 +64,7 @@ Flixder is an application that gathers random movies from your favorite genres a
 
 
 
-### Endpoints
+## Endpoints
 | Endpoint         | HTTP Verb | Description                  |
 | ---------------- | --------- | ---------------------------- |
 | /movies          | GET       | Gets all movies              |
