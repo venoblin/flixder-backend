@@ -6,8 +6,9 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body
 
     const user = await User.findOne({ email: email })
+    const isAuthenticated = await middleware.comparePassword(password, user.password)
 
-    if (user && middleware.comparePassword(password, user.password)) {
+    if (isAuthenticated) {
       const payload = {
         id: user._id,
         email: user.email
