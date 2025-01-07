@@ -1,95 +1,51 @@
-<a name="readme-top"></a>
-
-[LinkedIn](https://www.linkedin.com/in/jonathanvillagomezhernandez/) |
-[Website](https://www.jonweb.dev/)
-
-<!-- PROJECT LOGO -->
-<br />
+<br/>
 <div align="center">
-
-  <h1 align="center">Flixder</h3>
-
-  <p align="center">
-    Get matched with your next favorite movie!
-    <br />
-    <a href="https://flixder.netlify.app/"><strong>View Demo</strong></a> | 
-    <a href="https://github.com/venoblin/flixder-backend"><strong>Back-End</strong></a>
-    <br />
-  </p>
+<a href="https://github.com/user/repo">
+<img src=".project-images/project-logo.png" alt="Logo" height="128px">
+</a>
+<h3 align="center">Flixder</h3>
+<p align="center">
+Get matched with your next favorite movie!
+<br/>
+<br/>
+<a href="https://flixder.netlify.app/">View Demo</a> . 
+<a href="https://github.com/venoblin/flixder-frontend">Front-End</a> 
+</p>
 </div>
 
+Table of Contents
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li><a href="#endpoints">Endpoints</a></li>
-  </ol>
-</details>
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <p align="center">
-  <img src="project-info/flixder-demo.gif" width="650" />
+  <img src=".project-images/flixder-demo.gif" width="650" />
 </p>
 
 <p align="center">
-  <img src="project-info/screenshot01.png" width="650" />
+  <img src=".project-images/screenshot01.png" width="650" />
 </p>
 
 <p align="center">
-  <img src="project-info/screenshot02.png" width="650" />
+  <img src=".project-images/screenshot02.png" width="650" />
 </p>
 
 <p align="center">
-  <img src="project-info/screenshot03.png" width="650" />
+  <img src=".project-images/screenshot03.png" width="650" />
 </p>
 
 Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. A fun way to find new movies to watch!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
-* React
-* SASS
-* Node.js
-* Express
-* MongoDB
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This project was built with the following technologies:
 
+- <img src="https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white" alt="Node.js" />
+- <img src="https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB" alt="Express.js" />
+- <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white" alt="MongoDB" />
+- <img src="https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB" alt="React" />
+- <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" alt="JavaScript" />
+- <img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff" alt="SASS" />
 
-
-## Endpoints
-| Endpoint         | HTTP Verb | Description                  |
-| ---------------- | --------- | ---------------------------- |
-| /movies          | GET       | Gets all movies              |
-| /movies          | POST      | Posts a new movie            |
-| /movies/:id      | GET       | Gets one movie from our db   |
-| /movies/tmdb/:id | GET       | Gets movie using its TMDB id |
-| /genres          | GET       | Gets all genres              |
-| /genres/:id      | GET       | Gets one genre               |
-| /providers       | GET       | Gets all watch providers     |
-| /providers/:id   | GET       | Gets one watch provider      |
-| /regions         | GET       | Gets all watch regions       |
-| /regions/:id     | GET       | Gets one watch region        |
-| /images          | GET       | Gets all images              |
-| /images/:id      | GET       | Gets one image               |
-| /profiles        | GET       | Gets all profiles            |
-| /profiles        | POST      | Posts a new profile          |
-| /profiles/:id    | GET       | Get one profiles             |
-| /profiles/:id    | PUT       | Updates a profile            |
-| /profiles/:id    | DELETE    | Deletes a profile            |
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
