@@ -19,7 +19,6 @@ Table of Contents
   - [Built With](#built-with)
 
 ## About The Project
-
 <p align="center">
   <img src=".project-images/flixder-demo.gif" width="650" />
 </p>
@@ -39,9 +38,7 @@ Table of Contents
 Flixder is an application that gathers random movies from your favorite genres and displays them in cards in front of you like a dating app. If you like a movie you swipe right and gets inserted in your movies to watch list. A fun way to find new movies to watch!
 
 ### Built With
-
 This project was built with the following technologies:
-
 - <img src="https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white" alt="Node.js" />
 - <img src="https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB" alt="Express.js" />
 - <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white" alt="MongoDB" />
